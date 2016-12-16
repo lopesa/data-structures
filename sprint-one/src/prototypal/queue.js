@@ -4,8 +4,8 @@ var Queue = function() {
   var obj = Object.create(queueMethods);
   obj.qSize = 0;
   obj.Storage = {};
-  obj.increment = 0;
-  obj.addSize = 0;
+  obj.firstIndex = 0;
+  obj.lastIndex = 0;
   obj.temp;
 
   return obj;
@@ -15,16 +15,16 @@ var queueMethods = {
 
   enqueue: function(value) {
     this.qSize ++;
-    this.Storage[this.addSize] = value;
-    this.addSize ++;
+    this.Storage[this.lastIndex] = value;
+    this.lastIndex ++;
 
   },
 
   dequeue: function() {
     this.qSize --;
-    this.temp = this.Storage[this.increment];
-    delete this.Storage[this.increment];
-    this.increment ++;
+    this.temp = this.Storage[this.firstIndex];
+    delete this.Storage[this.firstIndex];
+    this.firstIndex ++;
     return this.temp;
   },
 

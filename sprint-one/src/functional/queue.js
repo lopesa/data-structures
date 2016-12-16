@@ -5,23 +5,23 @@ var Queue = function() {
   var storage = {};
   var size = 0;
   var storageVal;
-  var increment = 0;
-  var addSize = 0;
+  var firstIndex = 0;
+  var lastIndex = 0;
 
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    storage[addSize] = value;
-    addSize ++;
+    storage[lastIndex] = value;
+    lastIndex ++;
     size ++;
   };
 
   someInstance.dequeue = function() {
     
     size --;
-    storageVal = storage[increment];
-    delete storage[increment];
-    increment ++;
+    storageVal = storage[firstIndex];
+    delete storage[firstIndex];
+    firstIndex ++;
     return storageVal;
   };
 

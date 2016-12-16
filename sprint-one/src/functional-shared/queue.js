@@ -6,8 +6,8 @@ var Queue = function() {
   _.extend(instantiation, queueMethods);
 
   instantiation.objSize = 0;
-  instantiation.increment = 0;
-  instantiation.addInc = 0;
+  instantiation.firstIndex = 0;
+  instantiation.lastIndex = 0;
   instantiation.storage = {};
   instantiation.tempSto;
   return instantiation;
@@ -16,14 +16,14 @@ var Queue = function() {
 var queueMethods = {
   enqueue: function(value) {
     this.objSize ++;
-    this.storage[this.addInc] = value;
-    this.addInc++;
+    this.storage[this.lastIndex] = value;
+    this.lastIndex++;
   },
   dequeue: function() {
     this.objSize --;
-    this.tempSto = this.storage[this.increment];
-    delete this.storage[this.increment];
-    this.increment ++;
+    this.tempSto = this.storage[this.firstIndex];
+    delete this.storage[this.firstIndex];
+    this.firstIndex ++;
     return this.tempSto;
   },
   size: function() {
