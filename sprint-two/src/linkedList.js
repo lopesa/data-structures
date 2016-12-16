@@ -46,8 +46,8 @@ var LinkedList = function() {
     //ie, we are noton the last node
     var newCount = list.counter;
     var pointer = list.head;
-    while (newCount > 0) {
-      console.log(pointer.value);
+    while (newCount > 0) { // can also execute by setting it while the value doesn'e equal to null rather than incrementing
+      // console.log(pointer.value);
       if (pointer.value === target) {
        
         return true;
