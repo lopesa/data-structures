@@ -19,7 +19,6 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  console.log(this.value);
   var contains = false;
 
   var search = function(tree) {
@@ -40,7 +39,6 @@ treeMethods.contains = function(target) {
 };
 
 //console.log(Tree(3));
-console.log(Tree(3).addChild());
 
 /*
  * Complexity: What is the time complexity of the above functions?
