@@ -32,10 +32,15 @@ var LinkedList = function() {
 
     // take the value the current head points to
     // and make that the current head
-    var tempVar = list.head.value;
-    list.head = list.head.next;
-    list.counter --;
-    return tempVar;
+    // if (list.head.value === undefined) {
+    if (!list.head.value) {
+      return undefined;
+    } else {
+      var tempVar = list.head.value;
+      list.head = list.head.next;
+      list.counter --;
+      return tempVar;
+    }
 
   };
 
