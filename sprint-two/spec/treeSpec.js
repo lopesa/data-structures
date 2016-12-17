@@ -41,7 +41,7 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
-  // add more tests here to test the functionality of linkedList
+  // add more tests here to test the functionality of tree
 
 
   it('should return false if nested children is not listed', function() {

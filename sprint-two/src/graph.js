@@ -59,7 +59,6 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
       hasEdge = true;
     }
   });
-  //console.log("hasEdge " + fromNode + " " + toNode + " " + hasEdge);
   return hasEdge;
 };
 
@@ -91,8 +90,31 @@ Graph.prototype.forEachNode = function(cb) {
   }
 };
 
+Graph.prototype.nodeConnections = function(nodeValue) {
+  var results = [];
+  
+  for (var j = 0; j < this.numOfEdges; j++) {
+    if (this.edges[j].fromNode === nodeValue) {
+      results.push(this.edges[j].toNode);
+    } else if (this.edges[j].toNode === nodeValue) {
+      results.push(this.edges[j].fromNode);
+    }
+  }
+  return results;
+};
+
 /*
  * Complexity: What is the time complexity of the above functions?
+
+
+  addNode --> O(1) = constant
+  contains --> O(n) = linear
+  removeNode --> O(n) = linear
+  hasEdge --> O(n) = linear
+  addEdge --> O(1) = constant
+  removeEdge --> O(n) = linear
+  forEachNode --> O(n) = linear
+  nodeConnection --> O(n) = linear
  */
 
 
