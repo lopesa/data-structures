@@ -24,4 +24,11 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should return removed value', function() {
+    set.add('Mel Gibson');
+    set.remove('Isaac Yoon');
+    //set.remove('Mel Gibson');
+    expect(set.remove('Mel Gibson')).to.equal('Mel Gibson');
+  });
+
 });
