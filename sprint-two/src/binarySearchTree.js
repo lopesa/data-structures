@@ -14,6 +14,10 @@ var BinarySearchTree = function(value) {
 var BinarySearchTreeMethods = {};
 
 BinarySearchTreeMethods.insert = function(value) {
+  if (typeof value !== 'number') {
+    return;
+  }
+
   var newNode = BinarySearchTree(value);
 
 
@@ -58,7 +62,7 @@ BinarySearchTreeMethods.contains = function(value) {
     }
     // if value is less than this node's value && this node has right prop
   };
-      // call the function again with this node's right prop as argument
+  // call the function again with this node's right prop as argument
   checkerFunc(this);
 
   // call the inner function with "this" as the arg
@@ -90,4 +94,7 @@ BinarySearchTreeMethods.depthFirstLog = function(func) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ .insert --> O(log(n)) = logarithmic
+ .contains --> O(log(n)) = logarithmic
+ .depthFirstLog --> O(1) = linear
  */

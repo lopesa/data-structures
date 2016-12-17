@@ -36,4 +36,11 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3]);
   });
+
+  it('should not insert a non-number', function() {
+    binarySearchTree.insert('cats');
+    expect(binarySearchTree.contains('cats')).to.equal(false);
+
+
+  });
 });
