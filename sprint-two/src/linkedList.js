@@ -3,7 +3,6 @@ var LinkedList = function() {
   list.head = null;
   list.tail = null;
   list.counter = 0;
-  //list.array = [];
 
   list.addToTail = function(value) {
     
@@ -32,16 +31,13 @@ var LinkedList = function() {
 
     // take the value the current head points to
     // and make that the current head
-    // if (list.head.value === undefined) {
-    if (!list.head.value) {
-      return undefined;
-    } else {
-      var tempVar = list.head.value;
+    var tempVar;    
+    if (list.head !== null) {
+      tempVar = list.head.value;
       list.head = list.head.next;
       list.counter --;
-      return tempVar;
     }
-
+    return tempVar;
   };
 
   list.contains = function(target) {
