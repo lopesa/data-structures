@@ -41,4 +41,16 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  // add more tests here to test the functionality of linkedList
+
+
+  it('should return false if nested children is not listed', function() {
+    tree.addChild(5);
+    tree.addChild(6);
+    tree.children[0].addChild(7);
+    tree.children[1].addChild(8);
+    expect(tree.contains(9)).to.equal(false);
+
+  });
+
 });

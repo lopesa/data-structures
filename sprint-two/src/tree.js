@@ -3,8 +3,7 @@ var Tree = function(value) {
   newTree.value = value;
 
   // your code here
-  newTree.children = [];  // fix me
-  //.log("newarray" , newTree.children);
+  newTree.children = [];  
   _.extend(newTree, treeMethods);
 
   return newTree;
@@ -13,9 +12,7 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {  
-  //console.log()
   this.children.push(Tree(value));
-  //console.log("array inside" , this.children);
 };
 
 treeMethods.contains = function(target) {
@@ -38,8 +35,9 @@ treeMethods.contains = function(target) {
   return contains;
 };
 
-//console.log(Tree(3));
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ .addChild --> O(1) = constant
+ .conatains --> O(n) = linear
  */
